@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Antaali Perfume — باك 3 عطور فاخرة 50ml | عرض حصري</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --ink:#0a0608;
+      --ink2:#110b0d;
+      --ink3:#180d10;
+      --crimson:#8b1a2a;
+      --crimson2:#a82035;
+      --ruby:#c0283a;
+      --gold:#c8952a;
+      --gold2:#e8b84a;
+      --gold3:#f5d080;
+      --smoke:#f5f0ee;
+      --muted:rgba(245,240,238,.42);
+      --border:rgba(200,149,42,.1);
+      --border2:rgba(255,255,255,.06);
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Cairo',sans-serif;
+      background:var(--ink);
+      color:var(--smoke);
+      overflow-x:hidden;
+    }
+    body::after{
+      content:'';position:fixed;inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events:none;z-index:9999;opacity:.35;
+    }
+
+    /* ══ STICKY NAV ══ */
+    .nav{
+      position:fixed;top:0;left:0;right:0;height:62px;
+      background:rgba(10,6,8,.92);backdrop-filter:blur(22px);
+      border-bottom:1px solid var(--border);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 5vw;z-index:100;
+      transform:translateY(-100%);transition:transform .4s ease;
+    }
+    .nav.show{transform:translateY(0)}
+    .nav-brand{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.05rem;font-weight:700;letter-spacing:.2em;
+      background:linear-gradient(120deg,var(--gold3),var(--gold));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .nav-cta{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(135deg,var(--gold),#9a6e15);
+      color:#0a0608;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:900;
+      padding:10px 22px;border-radius:2px;cursor:pointer;text-decoration:none;
+      letter-spacing:.05em;transition:opacity .2s;
+    }
+    .nav-cta:hover{opacity:.85}
+
+    /* ══ HERO ══ */
+    .hero{
+      min-height:100svh;
+      display:grid;grid-template-columns:1fr 1fr;
+      position:relative;overflow:hidden;
+    }
+    @media(max-width:860px){
+      .hero{grid-template-columns:1fr;grid-template-rows:auto auto}
+    }
+
+    .hero-img-pane{
+      position:relative;background:var(--ink2);overflow:hidden;
+    }
+    /* ornate bg pattern */
+    .hero-img-pane::before{
+      content:'';position:absolute;inset:0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(139,26,42,.25) 0%, transparent 70%),
+        linear-gradient(180deg, rgba(200,149,42,.05) 0%, transparent 60%);
+      z-index:1;
+    }
+    .hero-prod-img{
+      width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+      filter:contrast(1.08) saturate(1.1);
+      transition:transform 8s ease;
+    }
+    .hero-prod-img:hover{transform:scale(1.04)}
+    .hero-stamp{
+      position:absolute;bottom:24px;left:24px;
+      font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;
+      color:rgba(200,149,42,.55);z-index:2;
+    }
+
+    /* arabesque top bar */
+    .arabesque{
+      position:absolute;top:0;left:0;right:0;height:6px;z-index:3;
+      background:linear-gradient(90deg,transparent,var(--gold),var(--ruby),var(--gold),transparent);
+      opacity:.7;
+    }
+
+    .hero-copy{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:80px 56px 72px 48px;
+      background:var(--ink2);position:relative;overflow:hidden;
+    }
+    @media(max-width:860px){
+      .hero-copy{padding:52px 28px}
+      .hero-img-pane{min-height:60vw}
+    }
+    .hero-copy::before{
+      content:'';position:absolute;top:-100px;right:-100px;
+      width:450px;height:450px;border-radius:50%;
+      background:radial-gradient(circle,rgba(139,26,42,.12) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .hero-copy::after{
+      content:'';position:absolute;bottom:-80px;left:-80px;
+      width:300px;height:300px;border-radius:50%;
+      background:radial-gradient(circle,rgba(200,149,42,.07) 0%,transparent 70%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+      margin-bottom:24px;opacity:0;animation:fadeUp .8s .2s ease forwards;
+    }
+    .eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);flex-shrink:0}
+
+    .hero-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.8rem,5vw,5rem);font-weight:700;line-height:1;
+      color:var(--smoke);margin-bottom:10px;
+      opacity:0;animation:fadeUp .8s .35s ease forwards;
+    }
+    .hero-title em{
+      font-style:italic;
+      background:linear-gradient(120deg,var(--gold3),var(--gold));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .hero-tagline{
+      font-size:1.1rem;font-weight:700;color:var(--ruby);
+      margin-bottom:8px;letter-spacing:.03em;
+      opacity:0;animation:fadeUp .8s .42s ease forwards;
+    }
+    .hero-model{
+      font-size:.78rem;letter-spacing:.18em;color:var(--muted);
+      margin-bottom:32px;opacity:0;animation:fadeUp .8s .48s ease forwards;
+    }
+    .hero-desc{
+      font-size:.93rem;line-height:1.9;color:rgba(245,240,238,.6);
+      max-width:340px;margin-bottom:44px;
+      opacity:0;animation:fadeUp .8s .54s ease forwards;
+    }
+    .hero-desc strong{color:var(--gold2)}
+
+    .price-row{
+      display:flex;align-items:baseline;gap:14px;margin-bottom:38px;
+      opacity:0;animation:fadeUp .8s .62s ease forwards;
+    }
+    .price-was{font-size:1rem;color:rgba(245,240,238,.25);text-decoration:line-through}
+    .price-now{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.6rem,4.5vw,3.6rem);font-weight:700;color:var(--smoke);
+    }
+    .price-cur{font-size:.85rem;color:var(--gold);letter-spacing:.1em}
+    .price-save{
+      font-size:.72rem;
+      background:rgba(139,26,42,.2);border:1px solid rgba(139,26,42,.4);
+      color:#e88080;padding:4px 12px;border-radius:100px;letter-spacing:.05em;
+    }
+
+    .cta-group{display:flex;flex-direction:column;gap:13px;opacity:0;animation:fadeUp .8s .72s ease forwards;}
+    .btn-primary{
+      display:inline-flex;align-items:center;justify-content:center;gap:11px;
+      background:linear-gradient(135deg,#25D366,#1aad55);color:#fff;
+      font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;
+      padding:17px 36px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;
+      letter-spacing:.05em;box-shadow:0 8px 32px rgba(37,211,102,.18);
+      transition:transform .22s,box-shadow .22s;
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,.32)}
+    .btn-primary svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+    .btn-secondary{
+      display:inline-flex;align-items:center;justify-content:center;
+      background:transparent;border:1px solid rgba(255,255,255,.14);
+      color:rgba(245,240,238,.65);font-family:'Cairo',sans-serif;font-size:.9rem;
+      padding:14px 36px;border-radius:4px;cursor:pointer;text-decoration:none;
+      letter-spacing:.04em;transition:border-color .2s,color .2s;
+    }
+    .btn-secondary:hover{border-color:var(--gold);color:var(--gold2)}
+
+    .guarantees{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;
+      opacity:0;animation:fadeUp .8s .82s ease forwards;
+    }
+    .guar{font-size:.72rem;letter-spacing:.05em;color:rgba(245,240,238,.4);display:flex;align-items:center;gap:6px;}
+    .guar::before{content:'✓';color:var(--gold2);font-size:.8rem}
+    .guar-sep{color:rgba(255,255,255,.12);padding:0 4px}
+
+    /* ══ BENEFITS STRIP ══ */
+    .benefits{
+      background:linear-gradient(135deg,var(--crimson),#6a0f1c,var(--crimson));
+      border-top:1px solid rgba(200,149,42,.2);
+      border-bottom:1px solid rgba(200,149,42,.2);
+      padding:28px 5vw;
+      display:flex;flex-wrap:wrap;justify-content:center;gap:0;
+    }
+    .benefit{
+      display:flex;align-items:center;gap:10px;
+      padding:10px 32px;
+      border-right:1px solid rgba(255,255,255,.1);
+      font-size:.88rem;color:rgba(255,255,255,.85);
+      font-weight:600;
+    }
+    .benefit:last-child{border-right:none}
+    .benefit-icon{font-size:1.3rem}
+    @media(max-width:680px){
+      .benefit{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);width:100%;justify-content:center}
+      .benefit:last-child{border-bottom:none}
+    }
+
+    /* ══ PRODUCT DETAILS ══ */
+    .details{padding:90px 5vw;max-width:1200px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:60px}
+    .sh-eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
+    .sh-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--smoke);line-height:1.1}
+    .sh-line{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto 0}
+
+    .details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);border:1px solid var(--border2);border-radius:2px;overflow:hidden}
+    @media(max-width:700px){.details-grid{grid-template-columns:1fr}}
+    .detail-card{
+      background:var(--ink2);padding:40px 32px;position:relative;
+      transition:background .3s;
+    }
+    .detail-card::after{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,transparent,rgba(200,149,42,0),transparent);
+      transition:background .3s;
+    }
+    .detail-card:hover{background:#160c0e}
+    .detail-card:hover::after{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    .dc-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:rgba(200,149,42,.15);margin-bottom:18px;line-height:1}
+    .dc-title{font-size:1rem;font-weight:700;color:var(--smoke);margin-bottom:9px}
+    .dc-desc{font-size:.84rem;line-height:1.78;color:rgba(245,240,238,.42)}
+
+    /* ══ ORDER ══ */
+    .order-section{padding:90px 5vw;background:var(--ink);position:relative;overflow:hidden}
+    .order-section::before{
+      content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);
+      width:800px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,149,42,.35),transparent);
+    }
+    /* arabesque side ornament */
+    .order-section::after{
+      content:'✦ ✦ ✦';
+      position:absolute;top:28px;left:50%;transform:translateX(-50%);
+      font-size:.6rem;letter-spacing:.5em;color:rgba(200,149,42,.3);
+    }
+
+    .order-card{
+      max-width:620px;margin:0 auto;
+      background:var(--ink2);border:1px solid var(--border);
+      border-radius:2px;padding:56px 52px;position:relative;overflow:hidden;
+    }
+    @media(max-width:660px){.order-card{padding:40px 22px}}
+    .order-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(200,149,42,.6),transparent);
+    }
+    /* top arabesque bar */
+    .order-card-bar{
+      position:absolute;top:0;left:0;right:0;height:4px;
+      background:linear-gradient(90deg,transparent,var(--gold),var(--ruby),var(--gold),transparent);
+      opacity:.6;
+    }
+
+    .order-eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    .order-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:var(--smoke);margin-bottom:8px}
+    .order-sub{font-size:.87rem;color:var(--muted);margin-bottom:32px;line-height:1.75}
+
+    /* countdown */
+    .countdown{display:flex;gap:10px;margin-bottom:32px}
+    .cd{flex:1;background:rgba(200,149,42,.05);border:1px solid rgba(200,149,42,.14);border-radius:2px;padding:16px 6px;text-align:center}
+    .cd-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--smoke);line-height:1}
+    .cd-l{font-size:.6rem;letter-spacing:.12em;color:rgba(245,240,238,.3);margin-top:5px}
+
+    .offer-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+    .pill{font-size:.73rem;padding:6px 14px;border-radius:100px;border:1px solid rgba(200,149,42,.2);background:rgba(200,149,42,.06);color:var(--gold2);letter-spacing:.03em}
+
+    .order-price{
+      display:flex;align-items:baseline;gap:14px;margin-bottom:32px;
+      padding-bottom:32px;border-bottom:1px solid var(--border2);
+    }
+    .op-was{font-size:1.1rem;color:rgba(255,255,255,.2);text-decoration:line-through}
+    .op-now{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--smoke)}
+    .op-cur{font-size:.9rem;color:var(--gold)}
+    .op-free{font-size:.78rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);color:#5de88a;padding:5px 12px;border-radius:100px}
+
+    /* form */
+    .order-form{display:flex;flex-direction:column;gap:12px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:500px){.form-row{grid-template-columns:1fr}}
+    .inp{
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:2px;
+      padding:15px 18px;color:var(--smoke);
+      font-family:'Cairo',sans-serif;font-size:.9rem;
+      outline:none;transition:border-color .2s;text-align:right;width:100%;
+    }
+    .inp:focus{border-color:rgba(200,149,42,.45)}
+    .inp::placeholder{color:rgba(245,240,238,.22)}
+
+    /* qty control */
+    .qty-wrap{display:flex;align-items:center;border:1px solid rgba(255,255,255,.09);border-radius:2px;overflow:hidden;background:rgba(255,255,255,.04)}
+    .qty-label{flex:1;padding:15px 18px;font-size:.88rem;color:rgba(245,240,238,.5)}
+    .qty-btn{
+      width:48px;height:52px;background:rgba(200,149,42,.1);border:none;
+      color:var(--gold2);font-size:1.3rem;cursor:pointer;
+      transition:background .2s;flex-shrink:0;
+    }
+    .qty-btn:hover{background:rgba(200,149,42,.2)}
+    .qty-num{min-width:42px;text-align:center;font-size:1.05rem;font-weight:700;color:var(--smoke);padding:0 8px}
+
+    .submit{
+      margin-top:6px;padding:18px;
+      background:linear-gradient(135deg,var(--gold),#9a6e15);
+      color:#0a0608;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:900;
+      border:none;border-radius:2px;cursor:pointer;letter-spacing:.07em;
+      box-shadow:0 6px 28px rgba(200,149,42,.22);
+      transition:transform .2s,box-shadow .2s;
+    }
+    .submit:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(200,149,42,.38)}
+    .form-note{text-align:center;font-size:.73rem;color:rgba(245,240,238,.28);margin-top:14px}
+
+    /* ══ FOOTER ══ */
+    footer{
+      background:var(--ink2);border-top:1px solid var(--border2);
+      padding:36px 5vw;
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    }
+    .footer-brand{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.1rem;font-weight:700;letter-spacing:.15em;
+      background:linear-gradient(120deg,var(--gold3),var(--gold));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .footer-copy{font-size:.73rem;color:rgba(245,240,238,.22)}
+
+    /* ══ REVEAL ══ */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="stickyNav">
+  <div class="nav-brand">ANTAALI PERFUME</div>
+  <a href="#order" class="nav-cta">اطلب الآن — 199 DH</a>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-img-pane">
+    <div class="arabesque"></div>
+    <img src="assets/antaali-product.jpg" alt="Antaali Perfume — باك 3 عطور فاخرة" class="hero-prod-img"/>
+    <span class="hero-stamp">ANTAALI PERFUME — EXTRAIT NATURAL SPRAY</span>
+  </div>
+
+  <div class="hero-copy">
+    <span class="eyebrow">عرض حصري محدود</span>
+    <h1 class="hero-title">Antaali<br/><em>Perfume</em></h1>
+    <p class="hero-tagline">🔥 ريحة غاتخليك مختلف</p>
+    <p class="hero-model">EXTRAIT NATURAL SPRAY &nbsp;|&nbsp; 50ML × 3 &nbsp;|&nbsp; PACK EXCLUSIF</p>
+
+    <p class="hero-desc">
+      جوج ليك واحد لي عزيز عليك ✨<br/>
+      <strong>باك 3 عطور فاخرة 50ml</strong> — عطور حصرية مركّزة
+      بثبات استثنائي طوال اليوم.<br/>
+      التوصيل مجاني لجميع المدن المغربية 🚚
+    </p>
+
+    <div class="price-row">
+      <span class="price-was">335</span>
+      <span class="price-now">199</span>
+      <span class="price-cur">DH</span>
+      <span class="price-save">وفّر 136 درهم</span>
+    </div>
+
+    <div class="cta-group">
+      <a href="https://wa.me/212778878421?text=مرحبا%20أريد%20الطلب%20باك%20Antaali%20Perfume%203%20عطور%2050ml%20بسعر%20199%20درهم" class="btn-primary" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        اطلب عبر واتساب
+      </a>
+      <a href="#order" class="btn-secondary">أو اترك بياناتك هنا ↓</a>
+    </div>
+
+    <div class="guarantees">
+      <span class="guar">توصيل مجاني لجميع المدن</span>
+      <span class="guar-sep">·</span>
+      <span class="guar">دفع عند الاستلام</span>
+      <span class="guar-sep">·</span>
+      <span class="guar">عطور أصلية 100%</span>
+      <span class="guar-sep">·</span>
+      <span class="guar">ضمان الجودة</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFITS ══ -->
+<div class="benefits reveal">
+  <div class="benefit"><span class="benefit-icon">🚚</span> توصيل مجاني لجميع المدن المغربية</div>
+  <div class="benefit"><span class="benefit-icon">🔒</span> الدفع عند الاستلام</div>
+  <div class="benefit"><span class="benefit-icon">🌹</span> عطور أصلية Extrait Natural Spray</div>
+  <div class="benefit"><span class="benefit-icon">⏰</span> العرض محدود — اطلب الآن</div>
+</div>
+
+<!-- ══ PRODUCT DETAILS ══ -->
+<section class="details reveal">
+  <div class="section-header">
+    <span class="sh-eyebrow">لماذا Antaali</span>
+    <h2 class="sh-title">فاخر من كل<br/>جانب</h2>
+    <div class="sh-line"></div>
+  </div>
+  <div class="details-grid">
+    <div class="detail-card">
+      <div class="dc-num">01</div>
+      <div class="dc-title">3 عطور فاخرة في باك واحد</div>
+      <div class="dc-desc">جوج ليك واحد لي عزيز عليك — ثلاثة عطور حصرية تكفيك لجميع المناسبات، من الصباح إلى السهرة.</div>
+    </div>
+    <div class="detail-card">
+      <div class="dc-num">02</div>
+      <div class="dc-title">Extrait Natural Spray</div>
+      <div class="dc-desc">تركيز عالٍ من المواد العطرية الطبيعية يضمن ثباتاً استثنائياً لأكثر من 12 ساعة على البشرة.</div>
+    </div>
+    <div class="detail-card">
+      <div class="dc-num">03</div>
+      <div class="dc-title">50ml × 3 قارورة</div>
+      <div class="dc-desc">حجم سفر مريح وعملي — 50ml لكل قارورة، كافية لأشهر من الاستخدام اليومي.</div>
+    </div>
+    <div class="detail-card">
+      <div class="dc-num">04</div>
+      <div class="dc-title">تغليف فاخر</div>
+      <div class="dc-desc">علبة حمراء وذهبية أنيقة — هدية مثالية لأي مناسبة، جاهزة للتغليف دون أي إضافات.</div>
+    </div>
+    <div class="detail-card">
+      <div class="dc-num">05</div>
+      <div class="dc-title">ريحة غاتخليك مختلف</div>
+      <div class="dc-desc">عطور مختارة بعناية لتجعلك مميزاً في كل مكان — اشعر بالفرق من أول رشّة.</div>
+    </div>
+    <div class="detail-card">
+      <div class="dc-num">06</div>
+      <div class="dc-title">199 درهم فقط</div>
+      <div class="dc-desc">بدل 335 درهم — وفّر 136 درهم مع توصيل مجاني. قيمة استثنائية لعطور لا تُقارَن.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ORDER SECTION ══ -->
+<section class="order-section reveal" id="order">
+  <div class="order-card">
+    <div class="order-card-bar"></div>
+    <p class="order-eyebrow">احجز نسختك الآن</p>
+    <h2 class="order-title">عرض محدود<br/>قبل نفاد الكمية</h2>
+    <p class="order-sub">أدخل بياناتك وسيتواصل معك فريقنا خلال أقل من ساعة لتأكيد طلبك.</p>
+
+    <div class="countdown">
+      <div class="cd"><div class="cd-n" id="cd-h">05</div><div class="cd-l">ساعة</div></div>
+      <div class="cd"><div class="cd-n" id="cd-m">47</div><div class="cd-l">دقيقة</div></div>
+      <div class="cd"><div class="cd-n" id="cd-s">33</div><div class="cd-l">ثانية</div></div>
+    </div>
+
+    <div class="offer-pills">
+      <span class="pill">🚚 توصيل مجاني</span>
+      <span class="pill">🔒 دفع عند الاستلام</span>
+      <span class="pill">🌹 3 عطور 50ml</span>
+    </div>
+
+    <div class="order-price">
+      <span class="op-was">335</span>
+      <span class="op-now">199</span>
+      <span class="op-cur">درهم</span>
+      <span class="op-free">🚚 توصيل مجاني</span>
+    </div>
+
+    <form class="order-form" onsubmit="sendOrder(event)">
+      <div class="form-row">
+        <input class="inp" type="text" id="f-name"  placeholder="الاسم الكامل ✱" required/>
+        <input class="inp" type="tel"  id="f-phone" placeholder="رقم الهاتف ✱" required/>
+      </div>
+      <div class="form-row">
+        <input class="inp" type="text" id="f-city"    placeholder="المدينة ✱" required/>
+        <input class="inp" type="text" id="f-address" placeholder="العنوان ✱" required/>
+      </div>
+
+      <!-- quantity -->
+      <div class="qty-wrap">
+        <span class="qty-label">الكمية</span>
+        <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+        <span class="qty-num" id="qty-display">1</span>
+        <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+
+      <button type="submit" class="submit">🛒 احجز الآن — 199 درهم</button>
+      <p class="form-note">🔒 معلوماتك محمية ولن تُشارك مع أي طرف ثالث</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">ANTAALI PERFUME</div>
+  <div class="footer-copy">© 2025 Antaali Perfume · www.antaali.com · جميع الحقوق محفوظة</div>
+</footer>
+
+<script>
+/* ── Quantity ── */
+let qty = 1;
+function changeQty(d){
+  qty = Math.max(1, qty + d);
+  document.getElementById('qty-display').textContent = qty;
+}
+
+/* ── Countdown ── */
+(function(){
+  let t = 5*3600+47*60+33;
+  const h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+  setInterval(()=>{
+    if(t<=0)return; t--;
+    h.textContent=String(Math.floor(t/3600)).padStart(2,'0');
+    m.textContent=String(Math.floor((t%3600)/60)).padStart(2,'0');
+    s.textContent=String(t%60).padStart(2,'0');
+  },1000);
+})();
+
+/* ── Sticky nav ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('stickyNav').classList.toggle('show',window.scrollY>100);
+});
+
+/* ── Scroll reveal ── */
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* ── Order → WhatsApp ── */
+function sendOrder(e){
+  e.preventDefault();
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const city    = document.getElementById('f-city').value.trim();
+  const address = document.getElementById('f-address').value.trim();
+  if(!name||!phone||!city||!address)return;
+  const total = qty * 199;
+  const msg = encodeURIComponent(
+    `مرحبا 👋 لدي طلب جديد:\n\n🌹 المنتج: Antaali Perfume — باك 3 عطور 50ml\n👤 الاسم: ${name}\n📞 الهاتف: ${phone}\n🏙️ المدينة: ${city}\n📍 العنوان: ${address}\n📦 الكمية: ${qty} باك\n💰 المجموع: ${total} درهم\n🚚 التوصيل: مجاني`
+  );
+  window.open(`https://wa.me/212778878421?text=${msg}`,'_blank');
+}
+</script>
+</body>
+</html>
