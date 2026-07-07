@@ -354,7 +354,26 @@
     .reveal.in{opacity:1;transform:translateY(0)}
 
     @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-  </style>
+  
+/* ══ PERF GALLERY ══ */
+.perf-gallery{
+  display:grid;grid-template-columns:3fr 2fr;gap:3px;
+  background:#000;
+}
+.pg-main,.pg-side{overflow:hidden}
+.pg-main{aspect-ratio:16/9}
+.pg-side{aspect-ratio:4/5}
+.pg-main img,.pg-side img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:contrast(1.06) saturate(1.05);
+  transition:transform .6s ease;
+}
+.pg-main:hover img,.pg-side:hover img{transform:scale(1.04)}
+@media(max-width:680px){
+  .perf-gallery{grid-template-columns:1fr;grid-template-rows:auto auto}
+  .pg-main,.pg-side{aspect-ratio:4/3}
+}
+</style>
 </head>
 <body>
 
@@ -368,7 +387,7 @@
 <section class="hero">
   <div class="hero-img-pane">
     <div class="arabesque"></div>
-    <img src="assets/antaali-product.jpg" alt="Antaali Perfume — باك 3 عطور فاخرة" class="hero-prod-img"/>
+    <img src="assets/antaali2.png" alt="Antaali Perfume — باك 3 عطور فاخرة" class="hero-prod-img"/>
     <span class="hero-stamp">ANTAALI PERFUME — EXTRAIT NATURAL SPRAY</span>
   </div>
 
@@ -420,6 +439,16 @@
   <div class="benefit"><span class="benefit-icon">⏰</span> العرض محدود — اطلب الآن</div>
 </div>
 
+
+<!-- ══ GALLERY ══ -->
+<div class="perf-gallery reveal">
+  <div class="pg-main">
+    <img src="assets/antaali2.png" alt="Antaali Perfume — الباك الفاخر"/>
+  </div>
+  <div class="pg-side">
+    <img src="assets/antaali1.png" alt="Antaali Perfume — 3 عطور"/>
+  </div>
+</div>
 <!-- ══ PRODUCT DETAILS ══ -->
 <section class="details reveal">
   <div class="section-header">
